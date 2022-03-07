@@ -1,0 +1,35 @@
+{
+    "name": "mrwplugin",
+    "version": "1.0.0",
+    "description": "Cruzar excel MRW con referencia ECI",
+    "main": "./main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "keywords": [],
+    "author": "Sergio Puerto",
+    "license": "ISC",
+    "dependencies": {
+        "jszip": "^3.7.1",
+        "mssql": "^8.0.2",
+        "xlsx": "^0.18.1"
+    },
+    "devDependencies": {
+        "electron": "^17.0.0",
+        "electron-builder": "^22.10.5"
+    },
+    "build": {
+        "productName": "MRW Plugin",
+        "appId": "MRW.Plugin1",
+        "directories": {
+            "buildResources": "public"
+        },
+        "win": {
+            "icon": "public/icon2.png"
+        }
+    }
+}
