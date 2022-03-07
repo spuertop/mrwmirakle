@@ -1,5 +1,6 @@
 const { ipcRenderer } = require('electron');
-const clica = document.getElementById('clica');
+
+//Buscar pedidos ECI
 const p = document.getElementById('p');
 const file = document.getElementById('sendFile');
 
@@ -17,4 +18,28 @@ ipcRenderer.on('loadFile', (e, data) => {
         p.insertAdjacentHTML('afterbegin', '<small><li>' + data + '</li><small>');
     }
 
+});
+
+//Descomprimir ZIPS
+const btnProcesar = document.getElementById('procesa');
+const resultZips = document.getElementById('p2');
+const inputZip = document.getElementById('loszip');
+
+inputZip.addEventListener('click', (e)=>{
+    e.preventDefault();
+    ipcRenderer.send('selectDir');
+});
+ipcRenderer.on('selectDir', (e, data)=>{
+    inputZip.value = data;
+});
+
+btnProcesar.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(inputZip.value != ''){
+        ipcRenderer.send('zipPath', inputZip.value)
+    }
+})
+
+ipcRenderer.on('zipPath', (e, data)=>{
+    resultZips.insertAdjacentHTML('afterbegin', '<li>' + data + '</li>');
 })

@@ -12,23 +12,22 @@
     <h3 style="color: orange">Plugins Cliente MRW 1.1</h3>
     <p>https://stuk.github.io/jszip/documentation/examples/read-local-file-api.html</p>
     <details>
-        <summary>■ Buscar pedidos ECI en sistema o no</summary>
+        <summary>■ Buscar pedidos ECI en sistema</summary>
         <article>
             <form action="">
-                <label for="avatar">Seleccionar fichero Excel con las referencias ECI</label>
-                <input id="file" type="file" id="avatar" name="avatar" accept=".xlsx,.xls">
+                <label for="file">Seleccionar fichero Excel con las referencias ECI</label>
+                <input id="file" type="file" name="avatar" accept=".xlsx,.xls">
                 <button type="submit" id="sendFile">Busca</button>
             </form>
             <ul id="p" style="overflow-y: scroll;height: 200px;"></ul>
         </article>
-
     </details>
     <details>
         <summary>■ Descomprimir Albaranes Zip a PDF</summary>
         <article>
             <form action="">
                 <label for="loszip">Carpeta con los archivos *_albaran.zip:</label>
-                <input id="file" type="file" id="loszip" name="loszip" accept=".zip">
+                <input id="loszip" type="text" name="loszip">
                 <button type="submit" id="procesa">Extraer y renombrar</button>
             </form>
             <ul id="p2" style="overflow-y: scroll;height: 200px;"></ul>

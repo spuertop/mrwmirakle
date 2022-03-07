@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
-require('./index')
-
+require('./index'); //Buscar pedidos ECI en sistema
+require('./index2'); //Descomprimir ZIPS
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
@@ -14,8 +14,8 @@ function createWindow() {
         }
     });
     //mainWindow.setMenu(null);
-    mainWindow.loadFile('index.html')
-        //mainWindow.webContents.openDevTools()
+    mainWindow.loadFile('index.html');
+    //mainWindow.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
@@ -28,4 +28,5 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', function() {
     if (process.platform !== 'darwin') app.quit()
-})
+});
+
